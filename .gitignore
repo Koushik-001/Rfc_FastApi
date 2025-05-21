@@ -1,0 +1,50 @@
+# Python
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.pyc
+*.pyo
+*.pyd
+
+# FastAPI specific
+*.db
+*.sqlite3
+
+# VS Code settings (if using VSCode)
+.vscode/
+
+# PyCharm settings (if using PyCharm)
+.idea/
+
+# Docker related files
+Dockerfile
+docker-compose.yml
+.docker/
+
+# Other
+*.log
+*.csv
+*.tsv
+*.sqlite
+*.bak
+*.swp
+
+# Poetry (if using poetry)
+.poetry/
+
+# pytest cache
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
