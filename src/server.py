@@ -22,4 +22,5 @@ async def get_fun():
 
 @app.post('/predict')
 async def predict_endpoint(token: JwtToken):
-    return token
+    return predict("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODE5YWU2ZjhlZGE5ZmIxOGE4MDVmNDkiLCJwaG9uZSI6Iis5MTkxMDA5NTI3NTIiLCJpYXQiOjE3NDc4MTg2MDcsImV4cCI6MTc0NzkwNTAwN30.KfUObHb66w_taI2dhz4edTOzrfEOGPO35I2gFwdXK1U")
+    
