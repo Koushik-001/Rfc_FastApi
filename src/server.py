@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request,Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from model.train_model import model_training
@@ -27,7 +27,17 @@ async def predict_endpoint(response:Request):
     data = await response.json()
     return predict(data)
     
-@app.on_event("startup")
-@repeat_every(seconds= 3 * 60 * 60)
-async def train_cron():
-    return  model_training("+919100952752")
+#cron job, not needed but for reference if needed
+# @app.on_event("startup")
+# @repeat_every(seconds= 3 * 60 * 60)
+# async def corn_job():
+#     train_cron_path()
+
+@app.get('/train/{phone}/{token}')
+async def train_cron_path(phone:str,token:str):
+    return  model_training(phone,token)
+
+#works fine but any symbols present in phone number dont get registered, addition work needed
+# @app.get('/train')
+# async def train_cron_query(phone:str = Query(...)):
+#     return  model_training(phone)

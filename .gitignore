@@ -12,6 +12,7 @@ venv.bak/
 *.pyc
 *.pyo
 *.pyd
+*.pkl
 
 # FastAPI specific
 *.db

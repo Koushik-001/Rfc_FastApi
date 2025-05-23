@@ -8,10 +8,9 @@ import os
 import joblib
 
 
-def model_training(phone:str):
+def model_training(phone:str,token:str):
         load_dotenv()
         api_url = os.getenv("API_URL")
-        token = os.getenv("API_TOKEN")  
 
         headers = {"Authorization": f"Bearer {token}"}
         fetch_data = requests.get(f"{api_url}/find_feedback/{phone}", headers=headers)
@@ -36,5 +35,7 @@ def model_training(phone:str):
 
             joblib.dump(model, "model/model.pkl")
             print("✅ Model trained and saved as model.pkl")
+            return "Succesfully Trained"
         else:
             print("❌ Failed to fetch training data")
+            return "Failed to train"
