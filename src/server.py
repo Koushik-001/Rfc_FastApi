@@ -28,6 +28,6 @@ async def predict_endpoint(response:Request):
     return predict(data)
     
 @app.on_event("startup")
-@repeat_every(seconds=60)
+@repeat_every(seconds= 3 * 60 * 60)
 async def train_cron():
-    return  model_training()
+    return  model_training("+919100952752")

@@ -34,7 +34,7 @@ def model_training(phone:str):
             model = RandomForestClassifier()
             model.fit(X_train, y_train)
 
-            joblib.dump(model, "src/model/model.pkl")
+            joblib.dump(model, "model/model.pkl")
             print("✅ Model trained and saved as model.pkl")
         else:
             print("❌ Failed to fetch training data")
